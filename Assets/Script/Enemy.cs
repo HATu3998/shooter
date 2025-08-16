@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            Audio.instance.PlayDieClip();
             GameManager.instance.EnemySkillPlayer();
             collision.gameObject.SetActive(false);
         }

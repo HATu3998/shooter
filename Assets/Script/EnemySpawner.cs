@@ -15,12 +15,15 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnTimer += Time.deltaTime;
-        if(spawnTimer >= spawnRate)
+        if (!GameManager.instance.GameOver())
         {
-            SpawnsEnemy();
-            spawnTimer = 0;
+            spawnTimer += Time.deltaTime;
+            if (spawnTimer >= spawnRate)
+            {
+                SpawnsEnemy();
+                spawnTimer = 0;
 
+            }
         }
     }
     private void OnDrawGizmosSelected()

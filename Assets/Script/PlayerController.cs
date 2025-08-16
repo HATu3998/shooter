@@ -58,5 +58,6 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         Instantiate(bulletPrefabs, firePoint.position, firePoint.rotation);
+        Audio.instance.PlayShootClip();
     }
 }
